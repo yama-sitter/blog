@@ -1,16 +1,24 @@
 {
-  "name": "@example/basics",
-  "type": "module",
+  "name": "yama-sitter-blog",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "astro": "astro",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "astro dev",
+    "preview": "wrangler pages dev ./dist",
+    "start": "astro dev"
   },
-  "dependencies": {
-    "astro": "^1.9.0"
+  "devDependencies": {
+    "@astrojs/cloudflare": "^5.0.0",
+    "@astrojs/rss": "^2.0.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "astro": "^1.9.2",
+    "astro-robots-txt": "^0.3.11",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^2.47.0",
+    "tailwindcss": "^3.2.4",
+    "wrangler": "^2.8.0"
   }
 }
