@@ -5,7 +5,8 @@ import Blog from "@layouts/blog";
 import Date from "@components/utilities/Date";
 
 const { id } = Astro.params
-const article = await fetchArticle(id)
+const draftKey = Astro.url.searchParams.get('draftKey') || null
+const article = await fetchArticle(id, { draftKey })
 ---
 <Blog title={article.title} description={article.description || article.body} img={article.image ? article.image : null}>
 	<div class="py-6 prose lg:prose-lg">
