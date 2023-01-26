@@ -9,4 +9,10 @@ export default defineConfig({
   integrations: [sitemap(), robotsTxt()],
   output: 'server',
   adapter: cloudflare({ mode: 'directory' }),
+  define: {
+    MICROCMS_SERVICE_DOMAIN: JSON.stringify(
+      process.env.MICROCMS_SERVICE_DOMAIN
+    ),
+    MICROCMS_API_KEY: JSON.stringify(process.env.MICROCMS_API_KEY),
+  },
 });
