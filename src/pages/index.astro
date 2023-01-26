@@ -1,14 +1,13 @@
 ---
-import { published } from "@data/post"
+import { fetchArticles } from "@lib/api"
 import Blog from "@layouts/blog";
 import Preview from "@components/blog/preview";
 
-const markdownFiles = await Astro.glob('../content/**/*.md')
-const posts = published( markdownFiles );
+const articles = await fetchArticles();
 ---
 
 <Blog>
 	<div>
-		{posts.map((p) => <Preview post={p} />)}
+		{articles.contents.map((article) => <Preview article={article} />)}
 	</div>
 </Blog>

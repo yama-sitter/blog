@@ -7,6 +7,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'http://yama-sitter.me',
   integrations: [sitemap(), robotsTxt()],
-  // output: 'server',
-  // adapter: cloudflare({ mode: 'directory' }),
+  output: 'server',
+  adapter: cloudflare({ mode: 'directory' }),
 });

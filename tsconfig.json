@@ -8,7 +8,8 @@
     "paths": {
       "@components/*": ["src/components/*.astro"],
       "@layouts/*": ["src/components/layouts/*.astro"],
-      "@data/*": ["src/data/*.ts"]
+      "@data/*": ["src/data/*.ts"],
+      "@lib/*": ["src/lib/*.ts"]
     }
   }
 }

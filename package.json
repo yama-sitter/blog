@@ -18,6 +18,8 @@
     "astro-robots-txt": "^0.3.11",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.47.0",
+    "microcms-js-sdk": "^2.3.2",
+    "string-strip-html": "^13.0.6",
     "tailwindcss": "^3.2.4",
     "wrangler": "^2.8.0"
   }

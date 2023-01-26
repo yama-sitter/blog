@@ -1,22 +1,25 @@
 ---
-import type { Post } from '@data/post';
+import type { Article } from '@lib/api';
+import { stripHtml } from '@lib/strip-html'
 import Date from "@components/utilities/Date";
-const post: Post = Astro.props.post
+
+const article: Article = Astro.props.article
+const foreword = stripHtml(article.body)
 ---
 
 <div class="py-6 flex flex-row-reverse justify-between md:gap-10 items-start">
-	{post.img &&
-		<a href={`/${post.slug}`} class="shrink-0">
-			<img src={post.img} alt={post.title} width="160" height="160" class="w-20 h-20 md:w-40 md:h-40 rounded bg-base-200 object-cover" />
+	{article.image &&
+		<a href={`/${article.id}`} class="shrink-0">
+			<img src={article.image.url} alt={article.title} width="160" height="160" class="w-20 h-20 md:w-40 md:h-40 rounded bg-base-200 object-cover" />
 		</a>
 	}
 	<div class="flex flex-col gap-4">
 		<h2 class="text-2xl font-bold">
-			<a class="hover:underline" href={`/${post.slug}`}>{post.title}</a>
+			<a class="hover:underline" href={`/${article.id}`}>{article.title}</a>
 		</h2>
 		<span class="badge badge-ghost">
-			<Date date={post.date}/>
+			<Date date={article.publishedAt}/>
 		</span>
-		<p class="text-sm text-base-content/70">{post.desc}</p>
+		<p class="text-sm text-base-content/70 truncated">{foreword}</p>
 	</div>
 </div>

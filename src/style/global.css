@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.astro-code {
-  border-radius: var(--rounded-box);
-  padding: 1rem;
+.truncated {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
