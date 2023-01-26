@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.embedly-embed {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto !important;
+}
+
 .truncated {
   overflow: hidden;
   display: -webkit-box;
