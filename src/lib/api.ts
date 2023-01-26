@@ -19,8 +19,8 @@ export type Article = {
 export type ArticleResponse = MicroCMSListResponse<Article>;
 
 const client = createClient({
-  serviceDomain: import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN,
-  apiKey: import.meta.env.VITE_MICROCMS_API_KEY,
+  serviceDomain: import.meta.env.MICROCMS_SERVICE_DOMAIN,
+  apiKey: import.meta.env.MICROCMS_API_KEY,
 });
 
 export const fetchArticles = async (queries?: MicroCMSQueries) => {
