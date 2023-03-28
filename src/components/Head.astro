@@ -1,10 +1,12 @@
 ---
 import { siteName, siteDescription } from '@data/site'
+import GA from '@components/GA'
 
 const title = Astro.props?.title || siteName;
 const description = Astro.props?.description || siteDescription;
 const image = Astro.props?.img || `${Astro.site}card.png`;
 const { twitterUsername } = Astro.props;
+const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
 ---
 
 <head>
@@ -13,7 +15,7 @@ const { twitterUsername } = Astro.props;
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 
-  <!-- core -->
+	<!-- core -->
 	{title && <title>{title}</title>}
 	{description && <meta name="description" content={description}>}
 	<!-- twitter -->
@@ -32,5 +34,7 @@ const { twitterUsername } = Astro.props;
 	{title && <meta property="og:site_name" content={title} />}
 	<meta property="og:type" content="object" />
 	<meta property="og:url" content={Astro.site} />
+	<!-- GA -->
+	<GA googleAnalyticsId={googleAnalyticsId} />
 	<slot/>
 </head>
