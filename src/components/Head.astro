@@ -1,5 +1,5 @@
 ---
-import { siteName, siteDescription } from '@data/site'
+import { siteName, siteDescription } from "@data/site";
 
 const title = Astro.props?.title || siteName;
 const description = Astro.props?.description || siteDescription;
@@ -8,22 +8,21 @@ const { twitterUsername } = Astro.props;
 ---
 
 <head>
-
 	<!-- essential -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 
-  <!-- core -->
+	<!-- core -->
 	{title && <title>{title}</title>}
-	{description && <meta name="description" content={description}>}
+	{description && <meta name="description" content={description} />}
 	<!-- twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	{title && <meta name="twitter:title" content={title} />}
 	{description && <meta name="twitter:description" content={description} />}
 	<meta name="twitter:image" content={image} />
 	{title && <meta name="twitter:image:alt" content={title} />}
-	{twitterUsername && <meta name="twitter:site" content={twitterUsername}/>}
-	{twitterUsername && <meta name="twitter:creator" content={twitterUsername}/>}
+	{twitterUsername && <meta name="twitter:site" content={twitterUsername} />}
+	{twitterUsername && <meta name="twitter:creator" content={twitterUsername} />}
 	<!-- og -->
 	{title && <meta property="og:title" content={title} />}
 	{description && <meta property="og:description" content={description} />}
@@ -32,5 +31,5 @@ const { twitterUsername } = Astro.props;
 	{title && <meta property="og:site_name" content={title} />}
 	<meta property="og:type" content="object" />
 	<meta property="og:url" content={Astro.site} />
-	<slot/>
+	<slot />
 </head>

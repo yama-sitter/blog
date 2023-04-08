@@ -1,20 +1,32 @@
 ---
-import { siteName, siteNavigation } from '@data/site'
+import { siteName, siteNavigation } from "@data/site";
 ---
+
 <div class="navbar bg-base-100">
   <div class="flex-1">
-    <a href="/" class="p-2 hover:underline md:text-3xl font-black flex gap-4 items-center">
-      <img src="/assets/icon.png" width="48" height="48" alt="Astro Blog" class="rounded-full bg-base-200 md:w-12 md:h-12 w-9 h-9">
+    <a
+      href="/"
+      class="p-2 hover:underline md:text-3xl font-black flex gap-4 items-center"
+    >
+      <img
+        src="/assets/icon.png"
+        width="48"
+        height="48"
+        alt="Astro Blog"
+        class="rounded-full bg-base-200 md:w-12 md:h-12 w-9 h-9"
+      />
       {siteName}
     </a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal p-1 hidden md:flex">
-      {siteNavigation.map(item => (
-        <li>
-          <a href={item.slug}>{item.title}</a>
-        </li>
-      ))}
+      {
+        siteNavigation.map((item) => (
+          <li>
+            <a href={item.slug}>{item.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>

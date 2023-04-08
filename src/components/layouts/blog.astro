@@ -1,25 +1,22 @@
 ---
-import "../../style/global.css"
+import "../../style/global.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
-import Head from '@components/Head'
-const {title} = Astro.props;
-const {description} = Astro.props;
-const {img} = Astro.props;
+import Head from "@components/Head";
+const { title } = Astro.props;
+const { description } = Astro.props;
+const { img } = Astro.props;
 ---
+
 <html lang="ja">
-<Head
-	title={title}
-	description={description}
-	img={img}
-/>
-<body class="flex flex-col items-center h-screen h-[100svh]">
-	<div class="w-full max-w-3xl flex-grow">
-		<Navbar />
-		<div class="p-4 pb-10">
-			<slot />
+	<Head title={title} description={description} img={img} />
+	<body class="flex flex-col items-center h-screen h-[100svh]">
+		<div class="w-full max-w-3xl flex-grow">
+			<Navbar />
+			<div class="p-4 pb-10">
+				<slot />
+			</div>
 		</div>
-	</div>
-	<Footer />
-</body>
+		<Footer />
+	</body>
 </html>

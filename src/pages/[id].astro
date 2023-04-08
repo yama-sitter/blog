@@ -1,24 +1,35 @@
 ---
-import { fetchArticle } from "@lib/api"
-import { stripHtml } from "@lib/strip-html"
+import { fetchArticle } from "@lib/api";
+import { stripHtml } from "@lib/strip-html";
 import Blog from "@layouts/blog";
 import Date from "@components/utilities/Date";
 
-const { id } = Astro.params
-const draftKey = Astro.url.searchParams.get('draftKey') || ''
-const article = await fetchArticle(id, { draftKey })
+const { id } = Astro.params;
+const draftKey = Astro.url.searchParams.get("draftKey") || "";
+const article = await fetchArticle(id, { draftKey });
 ---
-<Blog title={article.title} description={article.description || article.body} img={article?.image.url || null}>
+
+<Blog
+	title={article.title}
+	description={article.description || article.body}
+	img={article?.image.url || null}
+>
 	<div class="py-6 prose lg:prose-lg">
-		{article.image &&
-			<figure class="flex justify-center">
-				<img src={article.image.url} alt={article.title} class="rounded bg-base-200" />
-			</figure>
+		{
+			article.image && (
+				<figure class="flex justify-center">
+					<img
+						src={article.image.url}
+						alt={article.title}
+						class="rounded bg-base-200"
+					/>
+				</figure>
+			)
 		}
 		<h1>{article.title}</h1>
 		<div class="flex gap-3">
 			<span class="badge badge-ghost">
-				<Date date={article.createdAt}/>
+				<Date date={article.createdAt} />
 			</span>
 		</div>
 		<main set:html={article.body} />
