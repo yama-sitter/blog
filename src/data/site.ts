@@ -1,13 +1,13 @@
-export const siteName = 'いつも心に火を灯す';
+export const siteName = "いつも心に火を灯す";
 export const siteDescription =
-  'アジャイルやマネジメントについて色々書く個人ブログ';
+  "アジャイルやマネジメントについて色々書く個人ブログ";
 export const siteNavigation = [
   {
-    title: 'About',
-    slug: '/about',
+    title: "About",
+    slug: "/about",
   },
   {
-    title: 'Contact',
-    slug: '/contact',
+    title: "Contact",
+    slug: "/contact",
   },
 ];

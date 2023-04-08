@@ -1,10 +1,10 @@
-import { createClient } from 'microcms-js-sdk';
+import { createClient } from "microcms-js-sdk";
 
 import type {
   MicroCMSListResponse,
   MicroCMSQueries,
   MicroCMSImage,
-} from 'microcms-js-sdk';
+} from "microcms-js-sdk";
 
 export type Article = {
   id: string;
@@ -24,15 +24,15 @@ const client = createClient({
 });
 
 export const fetchArticles = async (queries?: MicroCMSQueries) => {
-  return await client.get<ArticleResponse>({ endpoint: 'articles', queries });
+  return await client.get<ArticleResponse>({ endpoint: "articles", queries });
 };
 
 export const fetchArticle = async (
   contentId: string,
-  queries?: MicroCMSQueries
+  queries?: MicroCMSQueries,
 ) => {
   return await client.getListDetail<Article>({
-    endpoint: 'articles',
+    endpoint: "articles",
     contentId,
     queries,
   });
