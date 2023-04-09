@@ -1,5 +1,5 @@
 ---
-import { siteName, siteNavigation } from "@data/site";
+import { SITE_NAME, SITE_NAVIGATION } from "@constants/site";
 ---
 
 <div class="navbar bg-base-100">
@@ -15,13 +15,13 @@ import { siteName, siteNavigation } from "@data/site";
         alt="Astro Blog"
         class="rounded-full bg-base-200 md:w-12 md:h-12 w-9 h-9"
       />
-      {siteName}
+      {SITE_NAME}
     </a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal p-1 hidden md:flex">
       {
-        siteNavigation.map((item) => (
+        SITE_NAVIGATION.map((item) => (
           <li>
             <a href={item.slug}>{item.title}</a>
           </li>

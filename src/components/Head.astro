@@ -1,8 +1,8 @@
 ---
-import { siteName, siteDescription } from "@data/site";
+import { SITE_NAME, SITE_DESCRIPTION } from "@constants/site";
 
-const title = Astro.props?.title || siteName;
-const description = Astro.props?.description || siteDescription;
+const title = Astro.props?.title || SITE_NAME;
+const description = Astro.props?.description || SITE_DESCRIPTION;
 const image = Astro.props?.img || `${Astro.site}card.png`;
 const { twitterUsername } = Astro.props;
 ---

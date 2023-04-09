@@ -2,7 +2,7 @@ import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
 import { fetchArticles } from "@lib/api";
 import type { Article } from "@lib/api";
-import { siteName, siteDescription } from "@data/site";
+import { SITE_NAME, SITE_DESCRIPTION } from "src/constants/site";
 
 const articleToRSSFeedItem = (
   { id, title, body, publishedAt }: Article,
@@ -22,8 +22,8 @@ export const get = async (context: APIContext) => {
   );
 
   return rss({
-    title: siteName,
-    description: siteDescription,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     site,
     items: rssFeedItems,
   });
