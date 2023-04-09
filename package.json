@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^6.2.2",
     "@astrojs/react": "^2.1.1",
+    "@astrojs/rss": "^2.3.2",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
     "@tailwindcss/typography": "^0.5.9",
