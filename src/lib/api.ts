@@ -12,7 +12,6 @@ export type Article = {
   title: string;
   category: string[];
   image: MicroCMSImage;
-  description: string;
   body: string;
 };
 

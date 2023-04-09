@@ -11,7 +11,7 @@ const article = await fetchArticle(id, { draftKey });
 
 <Blog
 	title={article.title}
-	description={article.description || article.body}
+	description={stripHtml(article.body)}
 	img={article?.image.url || null}
 >
 	<div class="py-6 prose lg:prose-lg">
