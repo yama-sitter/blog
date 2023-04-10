@@ -1,11 +1,16 @@
 ---
 import "../../style/global.css";
 import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
 import Head from "@components/Head";
+import { Footer } from "@tmp-components/Footer"
+import { CopyRight } from "@tmp-components/CopyRight"
+import { TWITTER_ACCOUNT_ID, TWITTER_ACCOUNT_URL } from "@constants";
+
 const { title } = Astro.props;
 const { description } = Astro.props;
 const { img } = Astro.props;
+
+const year = new Date().getFullYear()
 ---
 
 <html lang="ja">
@@ -17,6 +22,8 @@ const { img } = Astro.props;
 				<slot />
 			</div>
 		</div>
-		<Footer />
+		<Footer>
+			<CopyRight year={year} author={TWITTER_ACCOUNT_ID} link={TWITTER_ACCOUNT_URL} />
+		</Footer>
 	</body>
 </html>

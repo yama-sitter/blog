@@ -17,8 +17,8 @@
       "@layouts/*": [
         "src/components/layouts/*.astro"
       ],
-      "@constants/*": [
-        "src/constants/*.ts"
+      "@constants": [
+        "src/constants"
       ],
       "@lib/*": [
         "src/lib/*.ts"

@@ -2,7 +2,7 @@ import type { APIContext } from "astro";
 import rss from "@astrojs/rss";
 import { fetchArticles } from "@lib/api";
 import type { Article } from "@lib/api";
-import { SITE_NAME, SITE_DESCRIPTION } from "src/constants/site";
+import { SITE_NAME, SITE_DESCRIPTION } from "@constants";
 
 const articleToRSSFeedItem = (
   { id, title, body, publishedAt }: Article,
