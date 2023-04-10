@@ -1,7 +1,7 @@
 ---
 import type { Article } from "@lib/api";
 import { stripHtml } from "@lib/strip-html";
-import Date from "@components/utilities/Date";
+import { DateBadge } from "@tmp-components/DateBadge"
 
 const article: Article = Astro.props.article;
 const foreword = stripHtml(article.body);
@@ -25,9 +25,7 @@ const foreword = stripHtml(article.body);
 		<h2 class="text-2xl font-bold">
 			<a class="hover:underline" href={`/${article.id}`}>{article.title}</a>
 		</h2>
-		<span class="badge badge-ghost">
-			<Date date={article.publishedAt} />
-		</span>
+		<DateBadge date={article.createdAt} />
 		<p class="text-sm text-base-content/70 truncated">{foreword}</p>
 	</div>
 </div>

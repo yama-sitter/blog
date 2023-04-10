@@ -7,7 +7,5 @@ const articles = await fetchArticles();
 ---
 
 <Blog>
-	<div>
-		{articles.contents.map((article) => <Preview article={article} />)}
-	</div>
+	{articles.contents.map((article) => <Preview article={article} />)}
 </Blog>

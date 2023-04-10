@@ -2,7 +2,7 @@
 import { fetchArticle } from "@lib/api";
 import { stripHtml } from "@lib/strip-html";
 import Blog from "@layouts/blog";
-import Date from "@components/utilities/Date";
+import { DateBadge } from "@tmp-components/DateBadge"
 
 const { id } = Astro.params;
 const draftKey = Astro.url.searchParams.get("draftKey") || "";
@@ -28,9 +28,7 @@ const article = await fetchArticle(id, { draftKey });
 		}
 		<h1>{article.title}</h1>
 		<div class="flex gap-3">
-			<span class="badge badge-ghost">
-				<Date date={article.createdAt} />
-			</span>
+		<DateBadge date={article.createdAt} />
 		</div>
 		<main set:html={article.body} />
 	</div>

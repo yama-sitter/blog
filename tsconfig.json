@@ -9,7 +9,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "src/components/*.astro"
+        "src/components/*.astro",
+      ],
+      "@tmp-components*": [
+        "src/components/*.tsx"
       ],
       "@layouts/*": [
         "src/components/layouts/*.astro"
