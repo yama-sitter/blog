@@ -1,6 +1,6 @@
-import { Badge } from "@tmp-components/Badge";
-import { FormattedDate } from "@tmp-components/FormattedDate";
-import type { Props as FormattedDateProps } from "@tmp-components/FormattedDate";
+import { Badge } from "@components/Badge";
+import { FormattedDate } from "@components/FormattedDate";
+import type { Props as FormattedDateProps } from "@components/FormattedDate";
 
 export type Props = FormattedDateProps;
 

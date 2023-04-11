@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import type { Article } from "@lib/api";
 import { stripHtml } from "@lib/strip-html";
-import { DateBadge } from "@tmp-components/DateBadge";
+import { DateBadge } from "@components/DateBadge";
 
 export type Props = {
   article: Article;

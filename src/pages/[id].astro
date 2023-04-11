@@ -2,7 +2,7 @@
 import { fetchArticle } from "@lib/api";
 import { stripHtml } from "@lib/strip-html";
 import Blog from "@layouts/blog";
-import { DateBadge } from "@tmp-components/DateBadge"
+import { DateBadge } from "@components/DateBadge"
 
 const { id } = Astro.params;
 const draftKey = Astro.url.searchParams.get("draftKey") || "";

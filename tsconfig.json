@@ -9,10 +9,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "src/components/*.astro",
-      ],
-      "@tmp-components*": [
-        "src/components/*.tsx"
+        "src/components/*",
       ],
       "@layouts/*": [
         "src/components/layouts/*.astro"
@@ -21,7 +18,7 @@
         "src/constants"
       ],
       "@lib/*": [
-        "src/lib/*.ts"
+        "src/lib/*"
       ]
     },
     "jsx": "react-jsx",
