@@ -3,7 +3,6 @@ import "../../style/global.css";
 import { Head } from "@components/Head";
 import { OGP } from "@components/OGP";
 import { Navbar } from "@components/Navbar";
-import { Footer } from "@components/Footer";
 import { CopyRight } from "@components/CopyRight";
 import {
   SITE_NAME,
@@ -24,20 +23,24 @@ const year = new Date().getFullYear();
     <OGP title={title} description={description} image={image} url={url} />
   </Head>
   <body class="flex flex-col items-center h-screen h-[100svh]">
-    <main class="w-full max-w-3xl flex-grow">
-      <Navbar />
-      <div class="p-4 pb-10">
-        <div class="prose lg:prose-lg">
-          <slot />
+    <div class="w-full max-w-3xl flex-grow">
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <div class="p-4 pb-10">
+          <div class="prose lg:prose-lg">
+            <slot />
+          </div>
         </div>
-      </div>
-    </main>
-    <Footer>
-      <CopyRight
-        year={year}
-        author={TWITTER_ACCOUNT_ID}
-        link={TWITTER_ACCOUNT_URL}
-      />
-    </Footer>
+      </main>
+      <footer class="footer footer-center p-4">
+        <CopyRight
+          year={year}
+          author={TWITTER_ACCOUNT_ID}
+          link={TWITTER_ACCOUNT_URL}
+        />
+      </footer>
+    </div>
   </body>
 </html>
