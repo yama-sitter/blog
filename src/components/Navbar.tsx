@@ -1,10 +1,6 @@
 import { SITE_NAME, SITE_NAVIGATION } from "@constants";
 
-export type Props = {
-  children?: React.ReactNode;
-};
-
-export const Navbar: React.FC<Props> = ({ children }) => (
+export const Navbar: React.FC = () => (
   <div className="navbar bg-base-100">
     <div className="flex-1">
       <a
