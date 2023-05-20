@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_NAVIGATION } from "@constants";
+import { SITE_NAME } from "@constants";
 
 export const Navbar: React.FC = () => (
   <div className="navbar bg-base-100">
@@ -16,15 +16,6 @@ export const Navbar: React.FC = () => (
         />
         {SITE_NAME}
       </a>
-    </div>
-    <div className="flex-none">
-      <ul className="menu menu-horizontal p-1 hidden md:flex">
-        {SITE_NAVIGATION.map((item) => (
-          <li>
-            <a href={item.slug}>{item.title}</a>
-          </li>
-        ))}
-      </ul>
     </div>
   </div>
 );
