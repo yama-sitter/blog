@@ -14,19 +14,24 @@ import {
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  imageUrl?: string;
 }
 
 const title = Astro.props?.title || SITE_NAME;
 const description = Astro.props?.description || SITE_DESCRIPTION;
-const image = Astro.props?.image;
+const imageUrl = Astro.props?.imageUrl;
 const url = Astro.site.toString();
 const year = new Date().getFullYear().toString();
 ---
 
 <html lang="ja">
   <Head title={title} description={description}>
-    <OGP title={title} description={description} image={image} url={url} />
+    <OGP
+      title={title}
+      description={description}
+      imageUrl={imageUrl}
+      url={url}
+    />
   </Head>
   <body class="flex flex-col items-center h-screen h-[100svh]">
     <div class="w-full max-w-3xl flex-grow">

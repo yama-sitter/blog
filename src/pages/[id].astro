@@ -6,12 +6,16 @@ import { DateBadge } from "@components/DateBadge";
 
 const { id } = Astro.params;
 const draftKey = Astro.url.searchParams.get("draftKey") || "";
-const { title, image, createdAt, body } = await fetchArticle(id, {
+const { title, image, createdAt, body, ogpImageUrl } = await fetchArticle(id, {
 	draftKey,
 });
 ---
 
-<Blog title={title} description={stripHtml(body)} image={image?.url || null}>
+<Blog
+	title={title}
+	description={stripHtml(body)}
+	imageUrl={image?.url || ogpImageUrl || null}
+>
 	<article class="py-6 prose lg:prose-lg">
 		{
 			image?.url && (

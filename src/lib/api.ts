@@ -13,6 +13,7 @@ export type Article = {
   category: string[];
   image: MicroCMSImage;
   body: string;
+  ogpImageUrl: string;
 };
 
 export type ArticleResponse = MicroCMSListResponse<Article>;
