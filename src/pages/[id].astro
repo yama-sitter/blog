@@ -6,11 +6,13 @@ import { DateBadge } from "@components/DateBadge";
 
 const { id } = Astro.params;
 const draftKey = Astro.url.searchParams.get("draftKey") || "";
-const { title, image, createdAt, body } = await fetchArticle(id, { draftKey });
+const { title, image, createdAt, body } = await fetchArticle(id, {
+	draftKey,
+});
 ---
 
 <Blog title={title} description={stripHtml(body)} image={image?.url || null}>
-	<div class="py-6 prose lg:prose-lg">
+	<article class="py-6 prose lg:prose-lg">
 		{
 			image?.url && (
 				<figure class="flex justify-center">
@@ -22,6 +24,6 @@ const { title, image, createdAt, body } = await fetchArticle(id, { draftKey });
 		<div class="flex gap-3">
 			<DateBadge date={createdAt} />
 		</div>
-		<main set:html={body} />
-	</div>
+		<div set:html={body} />
+	</article>
 </Blog>
