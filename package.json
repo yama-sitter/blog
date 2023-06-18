@@ -4,7 +4,8 @@
   "private": false,
   "scripts": {
     "astro": "astro",
-    "build": "astro build",
+    "build": "npm run check && astro build",
+    "check": "astro check && tsc --noEmit",
     "dev": "astro dev",
     "preview": "wrangler pages dev ./dist",
     "start": "astro dev"
