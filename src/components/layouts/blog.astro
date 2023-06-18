@@ -14,8 +14,8 @@ import {
 const title = Astro.props?.title || SITE_NAME;
 const description = Astro.props?.description || SITE_DESCRIPTION;
 const image = Astro.props?.image;
-const url = Astro.site;
-const year = new Date().getFullYear();
+const url = Astro.site.toString();
+const year = new Date().getFullYear().toString();
 ---
 
 <html lang="ja">
